@@ -7,7 +7,7 @@
 </head>
 <body>
         <div class="container">
-        <h1>입력 폼</h1>
+        <h1>오점메는?</h1>
         <form id="inputForm">
             <label for="name">이름:</label>
             <input type="text" id="name" name="name" required><br><br>
@@ -22,8 +22,6 @@
     </div>
 
     <script>
-        let count = 0;
-
         document.getElementById('inputForm').addEventListener('submit', function(event) {
             event.preventDefault();
             const name = document.getElementById('name').value;
@@ -32,7 +30,7 @@
 
             const outputDiv = document.getElementById('output');
             const newEntry = document.createElement('div');
-            newEntry.innerHTML = `{사용자${count}: 이름: ${name}, 메뉴: ${menu}}`;
+            newEntry.innerHTML = `이름: ${name}, 메뉴: ${menu} 와, 맛있겠군요!`;
             outputDiv.appendChild(newEntry);
 
             // 폼 초기화
