@@ -22,6 +22,8 @@
     </div>
 
     <script>
+        int count=0;
+        
         document.getElementById('inputForm').addEventListener('submit', function(event) {
             event.preventDefault();
             const name = document.getElementById('name').value;
@@ -30,7 +32,7 @@
 
             const outputDiv = document.getElementById('output');
             const newEntry = document.createElement('div');
-            newEntry.innerHTML = `이름: ${name}, 메뉴: ${menu} 와, 맛있겠군요!`;
+            newEntry.innerHTML = `이름: ${name}, 메뉴${count}: ${menu} 와, 정말 맛있겠군요!`;
             outputDiv.appendChild(newEntry);
 
             // 폼 초기화
