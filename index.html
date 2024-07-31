@@ -6,6 +6,38 @@
     <title>Document</title>
 </head>
 <body>
-    <h1></h1>Hello World</h1>
+        <div class="container">
+        <h1>입력 폼</h1>
+        <form id="inputForm">
+            <label for="name">이름:</label>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="menu">메뉴:</label>
+            <input type="text" id="menu" name="menu" required><br><br>
+            <button type="submit">제출</button>
+        </form>
+
+        <div id="output" class="output">
+            <h2>출력 결과</h2>
+        </div>
+    </div>
+
+    <script>
+        let count = 0;
+
+        document.getElementById('inputForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const menu = document.getElementById('menu').value;
+            count++;
+
+            const outputDiv = document.getElementById('output');
+            const newEntry = document.createElement('div');
+            newEntry.innerHTML = `{사용자${count}: 이름: ${name}, 메뉴: ${menu}}`;
+            outputDiv.appendChild(newEntry);
+
+            // 폼 초기화
+            document.getElementById('inputForm').reset();
+        });
+    </script>
 </body>
 </html>
